@@ -1,7 +1,5 @@
 # mandelic-acid
 
-⚠️ _Remember to update the above title and remove all guidance notes and examples in this template, before finalizing your README_
-
 ---
 
 ### **👥 Team Members**
