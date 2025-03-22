@@ -47,6 +47,7 @@ Our exploration focused on understanding the class distribution, skin tone repre
 * Examining representation across different FST levels (1–6)
 * Inspecting image quality and verifying metadata
 * Identifying missing or anomalous values (e.g., FST scores of -1 or 0)
+
 We visualized sample images per class and skin tone group to assess variability and potential bias. These insights informed our data preprocessing and augmentation strategy.
 
 
