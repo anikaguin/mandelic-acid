@@ -38,11 +38,17 @@
 
 ## **📊 Data Exploration**
 
-**Describe:**
+In this project, we worked with a curated subset of the Fitzpatrick17k dataset provided through Kaggle, which contains approximately 4,500 labeled clinical images across 21 dermatological conditions. These images span a range of skin tones based on the Fitzpatrick Skin Tone (FST) scale, which is represented in two columns: fitzpatrick_scale (self-reported) and fitzpatrick_centaur (machine-annotated by Centaur Labs).
 
-* The dataset(s) used (i.e., the data provided in Kaggle \+ any additional sources)
-* Data exploration and preprocessing approaches
-* Challenges and assumptions when working with the dataset(s)
+**🧠 Exploration & Preprocessing**
+
+Our exploration focused on understanding the class distribution, skin tone representation, and data quality. Key steps included:
+* Analyzing class imbalance across the 21 skin conditions
+* Examining representation across different FST levels (1–6)
+* Inspecting image quality and verifying metadata
+* Identifying missing or anomalous values (e.g., FST scores of -1 or 0)
+We visualized sample images per class and skin tone group to assess variability and potential bias. These insights informed our data preprocessing and augmentation strategy.
+
 
 **Potential visualizations to include:**
 
