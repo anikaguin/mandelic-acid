@@ -17,12 +17,22 @@
 
 **Example:**
 
-* Built a \[insert model type\] using \[techniques used\] to solve \[Kaggle competition task\]
-* Achieved an F1 score of \[insert score\] and a ranking of \[insert ranking out of participating teams\] on the final Kaggle Leaderboard
-* Used \[explainability tool\] to interpret model decisions
-* Implemented \[data preprocessing method\] to optimize results within compute constraints
+* Built a Convolutional Neural Network model using EfficientNetB0 to predict different skin conditions using a diverse set of images and data.
+* Achieved an F1 score of 0.14490 and a ranking of 53/74 on the final Kaggle Leaderboard
+* Used SHAP to interpret model decisions which helped us understand the importance of feature selection and model predictions
+* Implemented Data augmentation and class weighting to optimize results within compute constraints
 
 🔗 [Equitable AI for Dermatology | Kaggle Competition Page](https://www.kaggle.com/competitions/bttai-ajl-2025/overview)
+
+---
+
+## **👩🏽‍💻 Setup & Execution**
+
+* To clone the repository, you need to execute the command: git clone https://github.com/anikaguin/mandelic-acid.git
+* Install dependencies using the terminal. Tere are a list of imports in the first cell. 
+* Create a virtual environment to install any dependencies. You can use: python -m venv venv
+* The datasets are available in the github repository. You can move it to any folder. 
+* You can run the script by typing python <filenmae>.py
 
 ---
 
@@ -50,9 +60,46 @@ Our exploration focused on understanding the class distribution, skin tone repre
 
 We visualized sample images per class and skin tone group to assess variability and potential bias. These insights informed our data preprocessing and augmentation strategy.
 
+---
 
-**Potential visualizations to include:**
+## **🧠 Model Development**
 
-* Plots, charts, heatmaps, feature visualizations, sample dataset images
+**Describe (as applicable):**
+
+* We used Convolutional Neural Network model with transfer learning based on EfficientNetB0 architecture. This allows us to yous weights determined by pre-trained models that have been trained in a larger dataset. We chose EfficientNetB0 because it works well with images and our data consisted largely on images of skin diseases. We used global Average Pooling to reduce the dimesnions and used dense layers with ReLU to add non-linearity. Then we used a final dense layer to classify the images with the labels of the skin diesease. 
+* We used EfficientNetB0 as a base layer. Thus the pretrained model already learned useful features from a larget dataset. We chose the batch size to be 32 which is common practice. We also initially had a learning rate of 0.0005 and we reduced it as a part of the fine tuning process. To prevent overfitting, we added dropout layers.
+* We split thet data up so that 80% was in training and 20% was in tetsing. For the training data, we used ImageDataGenerator to rescale the images. The evaluation metics was accuracy. We also used the F1 score to evaluate accuracy. The performance was not too accurate but we were able to increase the score through data fine tuning. 
 
 ---
+
+## **📈 Results & Key Findings**
+
+**Describe (as applicable):**
+
+* Our model did not perform too well. The accuracy was low but we were able to get it slightly higher than the initiial score due to hyperparameter fine tuning. 
+* We were ranked 53/74 teams
+* Our score was 0.14490
+
+---
+
+## **🖼️ Impact Narrative**
+1. What steps did you take to address [model fairness](https://haas.berkeley.edu/wp-content/uploads/What-is-fairness_-EGAL2.pdf)? (e.g., leveraging data augmentation techniques to account for training dataset imbalances; using a validation set to assess model performance across different skin tones)
+* Data augmentation techniques were applied to the images to address fairness. We rescaled the images to make our data more diverse. A validation set was also used to ensure that the model is predicting properly.
+3. What broader impact could your work have?
+* The borader impact of this work is to use machine learning to reduce bias in predictions. This ensures fairness in areas such as the medical field. This also helps in accessibility and inclusivity. It is also an ethical way to use AI and machine learning. 
+
+---
+
+## **🚀 Next Steps & Future Improvements**
+
+**Address the following:**
+
+* Some limitations include limited image resolutionn. We could have resize the images to make them bigger so that they could capture more details. We could have also done more data augmentation to reduce the chances of overfitting.
+* With more time and resources, we would have tried alternate models to predict the skin conditions. We would have hypertuned the models and compared the different model results. 
+* We should have had higher resolution images to see if it would have any impact on the model. We could have also increased the size of the dataset to see if it will make the model more accurate. 
+
+---
+
+
+
+
